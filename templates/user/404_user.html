@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Tidak Ditemukan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>User Tidak Ditemukan</h1>
+        <p>Maaf, user dengan nama <strong>'@{{ username }}'</strong> tidak ada di database kami.</p>
+        <br>
+        <!-- PENYESUAIAN: Arahkan kembali ke beranda, bukan login -->
+        <a href="{{ url_for('show_beranda') }}">Kembali ke Beranda</a>
+    </div>
+</body>
+</html>

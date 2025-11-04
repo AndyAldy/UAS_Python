@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="user-session">
+            Halo, <strong>{{ logged_in_user }}</strong>! (Admin)
+            <a href="{{ url_for('logout') }}" class="logout-link">[Logout]</a>
+        </div>
+        
+        <h1>Selamat Datang di Dashboard Admin</h1>
+        <p>Silakan pilih menu navigasi di bawah ini.</p>
+
+        <h2>Navigasi Admin</h2>
+        <ul>
+            <li>
+                <!-- Ini adalah link ke halaman CRUD yang baru -->
+                <a href="{{ url_for('manajemen_user') }}">
+                    Manajemen User
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('profile') }}">
+                    Lihat Halaman Profil
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+

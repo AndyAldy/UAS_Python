@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User: {{ user['username'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit User: @{{ user['username'] }}</h1>
+
+        <div class="form-card">
+            <!-- Form ini sudah benar, mengarah ke 'edit_user' -->
+            <form action="{{ url_for('edit_user', user_id=user['id']) }}" method="POST" class="crud-form vertical">
+                
+                <label for="nama_lengkap">Nama Lengkap</label>
+                <input type="text" name="nama_lengkap" id="nama_lengkap" value="{{ user['nama_lengkap'] }}" required>
+                
+                <label for="bio">Bio</label>
+                <input type="text" name="bio" id="bio" value="{{ user['bio'] }}">
+                
+                <label for="role">Role</label>
+                <select name="role" id="role">
+                    <option value="user" {% if user['role'] == 'user' %}selected{% endif %}>User (Karyawan)</option>
+                    <option value="admin" {% if user['role'] == 'admin' %}selected{% endif %}>Admin</option>
+                </select>
+                
+                <label for="password">Password Baru</label>
+                <input type="password" name="password" id="password" placeholder="Kosongkan jika tidak ingin diubah">
+                
+                <button type="submit" class="btn btn-create">Update Data</button>
+                
+                <!-- PENYESUAIAN: Link 'Batal' kembali ke halaman manajemen -->
+                <a href="{{ url_for('manajemen_user') }}" class="btn btn-delete" style="text-align: center;">Batal</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

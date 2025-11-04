@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda Karyawan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="user-session">
+            Halo, <strong>{{ user['username'] }}</strong>! 
+            <a href="{{ url_for('logout') }}" class="logout-link">[Logout]</a>
+        </div>
+        
+        <h1>Selamat Datang, {{ user['nama_lengkap'] }}!</h1>
+        <p>Ini adalah halaman beranda karyawanmu.</p>
+        
+        <p class="bio">{{ user['bio'] }}</p>
+        
+        <h2>Navigasi:</h2>
+        <ul>
+            <li><a href="{{ url_for('profile') }}">Lihat Halaman Profil</a></li>
+            <!-- PENYESUAIAN: url_for ke 'show_user_profile' (sesuai nama fungsi) -->
+            <li><a href="{{ url_for('show_user_profile', username=user['username']) }}">Lihat Halaman Profilmu</a></li>
+        </ul>
+
+    </div>
+</body>
+</html>
