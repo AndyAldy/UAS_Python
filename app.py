@@ -194,7 +194,6 @@ def ubah_password():
 
     return redirect(url_for('dashboard_mahasiswa'))
 
-# --- PERUBAHAN BARU ---
 # Menambahkan rute baru untuk mahasiswa mengubah email
 @app.route('/ubah-email', methods=['POST'])
 def ubah_email():

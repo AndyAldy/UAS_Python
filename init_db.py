@@ -2,14 +2,12 @@ import mysql.connector
 from mysql.connector import Error
 from werkzeug.security import generate_password_hash
 
-# --- KONFIGURASI MYSQL (SAMAKAN DENGAN app.py) ---
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
     'password': '', # Kosongkan jika XAMPP tidak pakai password
     'database': 'data_mhs' # Nama database yang Anda buat
 }
-# --------------------------------------------------
 
 def init_db():
     try:
