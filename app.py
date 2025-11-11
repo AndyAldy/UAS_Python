@@ -80,7 +80,6 @@ def login():
         conn.close()
         error = "NIM atau Password salah."
             
-    # Saya perbaiki juga label di login.html, pastikan Anda menggantinya
     return render_template('auth/login.html', error=error)
 
 @app.route('/register', methods=['GET', 'POST'])
