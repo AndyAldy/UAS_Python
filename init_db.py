@@ -7,7 +7,7 @@ DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
     'password': '', # Kosongkan jika XAMPP tidak pakai password
-    'database': 'uas_python_db' # Nama database yang Anda buat
+    'database': 'data_mhs' # Nama database yang Anda buat
 }
 # --------------------------------------------------
 

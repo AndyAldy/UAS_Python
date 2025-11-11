@@ -4,14 +4,12 @@ import mysql.connector
 from mysql.connector import Error
 
 app = Flask(__name__)
-app.secret_key = 'kunci_rahasia_sistem_manajemen_mahasiswa'
+app.secret_key = '12345'
 
-# --- KONFIGURASI MYSQL (SESUAIKAN DENGAN XAMPP ANDA) ---
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''  # Kosongkan jika XAMPP tidak pakai password
-app.config['MYSQL_DB'] = 'uas_python_db' # Nama database yang Anda buat
-# ----------------------------------------------------
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'data_mhs'
 
 def get_db_conn():
     """Membuat koneksi ke database MySQL"""
